@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright Nova Code (http://www.novacode.nl)
+See LICENSE file for full licensing details. -->
+
+<odoo>
+    <!-- <record id="timesheet_view_form_inherit" model="ir.ui.view">
+        <field name="name">account.analytic.line.form.inherit</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="project_timesheet_time_control.hr_timesheet_line_form"/>
+        <field name="arch" type="xml">
+            <field name="show_time_control" position="after">
+                <button string="Form" class="oe_stat_button" icon="fa-rocket" name="action_view_formio" type="object"/>
+            </field>
+        </field>
+    </record> -->
+    <!-- <record id="formio_task_timesheet_view_tree" model="ir.ui.view">
+        <field name="name">formio.task.timesheet.view.tree</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree" />
+        <field name="arch" type="xml">
+            <field name="unit_amount" position="after">
+                <button string="Form" name="action_view_formio" type="object"/>
+            </field>
+        </field>
+    </record> -->
+    <!-- <record id="view_kanban_formio_account_analytic_line" model="ir.ui.view">
+        <field name="name">account.analytic.line.formio.kanban</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="hr_timesheet.view_kanban_account_analytic_line" />
+        <field name="arch" type="xml">
+            <xpath expr="//templates//t[@t-esc='record.date_time.value']" position="replace"/>
+            <xpath expr="//templates//t[@t-esc='record.date_time_end.value']" position="replace"/>
+        </field>
+    </record> -->
+
+</odoo>
