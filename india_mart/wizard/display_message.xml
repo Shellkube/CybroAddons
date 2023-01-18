@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="api_warn_message_wizard" model="ir.ui.view">
+            <field name="name">india_mart.api.message</field>
+            <field name="model">display.api.message</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Message">
+                    <field name="message"/>
+                    <footer>
+                        <button string="OK" special="cancel" class="btn-primary"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

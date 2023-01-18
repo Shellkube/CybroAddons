@@ -1,0 +1,76 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <!-- <record model="ir.ui.view" id="india_mart.list">
+      <field name="name">india_mart list</field>
+      <field name="model">im.lead.wizard</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="query_id" string="QueryID"/>
+          <field name="glusr_usr_companyname" optional="hide" string="Organisation"/>
+          <field name="sender_name" />
+          <field name="mobile" />
+          <field name="email" />
+          <field name="state" />
+          <field name="city"/>
+          <field name="subject" />
+          <field name="product_name" />
+          <field name="product_details"/>
+          <field name="email2" string="Alternate Email" optional="hide" />
+        </tree>
+      </field>
+    </record> -->
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="india_mart.action_window">
+      <field name="name">India Mart Leads Import</field>
+      <field name="res_model">im.lead.wizard</field>
+      <field name="view_mode">form</field>
+      <field name="domain">[]</field>
+      <field name="target">new</field>
+      <field name="context">{}</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="india_mart.display_api_message">
+      <field name="name">India Mart Leads Import</field>
+      <field name="res_model">display.api.message</field>
+      <field name="view_mode">form</field>
+      <field name="domain">[]</field>
+      <field name="target">new</field>
+      <field name="context">{}</field>
+    </record>
+    <!-- server action to the one above -->
+
+    <!-- <record model="ir.actions.server" id="india_mart.action_server">
+      <field name="name">india_mart server</field>
+      <field name="model_id" ref="model_india_mart_im_lead"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record> -->
+
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="india_mart" id="india_mart.menu_root"/>
+-->
+    <!-- menu categories -->
+
+    <menuitem name="IM Leads Import" id="india_mart.menu_2" groups="base.group_user" action="india_mart.action_window" parent="crm.crm_menu_config" sequence="6"/>
+    <!-- <menuitem name="Menu 2" id="india_mart.menu_2" parent="india_mart.menu_root"/> -->
+
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="india_mart.menu_1_list" parent="india_mart.menu_1" action="india_mart.action_window"/>
+    <menuitem name="Server to list" id="india_mart" parent="india_mart.menu_2" action="india_mart.action_server"/>
+-->
+  </data>
+</odoo>
