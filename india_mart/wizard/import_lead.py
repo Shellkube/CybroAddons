@@ -31,12 +31,17 @@ class ImLeadWizard(models.TransientModel):
         if not self.st_date or not self.end_date:
             st_date = datetime.now() - delta
             end_date = st_date+delta
+            # st_date_f = st_date.strftime("%d-%m-%Y00:00:00")
+            # end_date_f = end_date.strftime("%d-%m-%Y%H:%M:%S")
         else:
             st_date = self.st_date
             end_date = self.end_date
+            # st_date_f = st_date.strftime("%d-%m-%Y00:00:00")
+            # end_date_f = end_date.strftime("%d-%m-%Y24:00:00")
         st_date_f = st_date.strftime("%d-%m-%Y")
         end_date_f = end_date.strftime("%d-%m-%Y")
-        link = f"https://mapi.indiamart.com/wservce/enquiry/listing/GLUSR_MOBILE/9818114474/GLUSR_MOBILE_KEY/MTU5NzY2NjYyNy43ODUjMTU2MDAwMg==/Start_Time/{st_date_f}/End_Time/{end_date_f}/"
-        resp = request("GET", link)
+        api_key = self.env['ir.config_parameter'].get_param('india_mart_api_key', '')
+        URL = f"https://mapi.indiamart.com/wservce/crm/crmListing/v2/?glusr_crm_key={api_key}&start_time={st_date_f}&end_time={end_date_f}"
+        resp = request("GET", URL)
         # _logger.info(resp.text)
         return self.env['im.leads'].create_leads(resp)
